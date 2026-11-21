@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon | Website Under Development</title>
+    <title>Purandar Sahu | Coming Soon — 25 November 2026</title>
+    <meta name="description" content="Official website of Purandar Sahu (purandarsahu.in). Launching on 25 November 2026 at 12:00 AM.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://purandarsahu.in/">
+    <meta property="og:title" content="Purandar Sahu | Coming Soon">
+    <meta property="og:description" content="Official website launching on 25 November 2026 at 12:00 AM.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://purandarsahu.in/">
     <style>
         * {
             margin: 0;
@@ -120,8 +127,8 @@
         <div class="badge">🚧 UNDER CONSTRUCTION</div>
         <h1>This Page is Currently Under Development</h1>
         <p>
-            We are working hard to build something great. The website will go live on 
-            <span class="highlight">25 November 2026 at 12:00 AM</span>. 
+            We are working hard to build something great. The website will go live on
+            <span class="highlight">25 November 2026 at 12:00 AM</span>.
             Please check back and visit us then!
         </p>
 
@@ -153,13 +160,13 @@
         // Target Date: 25 November 2026, 12:00:00 AM
         const launchDate = new Date("November 25, 2026 00:00:00").getTime();
 
-        const timer = setInterval(function() {
+        const timer = setInterval(function () {
             const now = new Date().getTime();
             const distance = launchDate - now;
 
             if (distance < 0) {
                 clearInterval(timer);
-                document.getElementById("countdown").innerHTML = 
+                document.getElementById("countdown").innerHTML =
                     "<h3 style='grid-column: span 4; color: #4ade80;'>🎉 We Are Live Now!</h3>";
                 return;
             }
