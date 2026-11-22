@@ -2097,6 +2097,42 @@ ${message}`;
     window.location.href = `mailto:contact@purandarsahu.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 </script>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
+  const firebaseConfig = {
+    apiKey: "AIzaSyDhKsne5nFK-ItIs0F_cSL1tzxTJrOg410",
+    authDomain: "purandar-pirtfolio.firebaseapp.com",
+    projectId: "purandar-pirtfolio",
+    storageBucket: "purandar-pirtfolio.firebasestorage.app",
+    messagingSenderId: "74307441830",
+    appId: "1:74307441830:web:7fa7e4555a218ccc1e5067"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  async function syncLivePortfolioData() {
+    try {
+      const achSnap = await getDocs(query(collection(db, "achievements"), orderBy("createdAt", "desc")));
+      window.ACHIEVEMENTS_DATA = achSnap.docs.map(d => d.data());
+      if (typeof window.renderAchievements === "function") {
+        window.renderAchievements("all");
+      }
+
+      const galSnap = await getDocs(query(collection(db, "gallery"), orderBy("createdAt", "desc")));
+      window.GALLERY_DATA = galSnap.docs.map(d => d.data());
+      if (typeof window.renderGallery === "function") {
+        window.renderGallery();
+      }
+    } catch (err) {
+      console.error("Firebase sync error:", err);
+    }
+  }
+
+  syncLivePortfolioData();
+</script>
+  
 </body>
 </html>
