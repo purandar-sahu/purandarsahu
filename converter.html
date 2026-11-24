@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Raw Image URL Converter | Purandar Sahu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#06080c',
+            card: '#101620',
+            cardHover: '#151d2b',
+            emeraldMain: '#10b981',
+            emeraldBright: '#34d399',
+            cyanMain: '#38bdf8',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-bg text-slate-100 font-sans min-h-screen antialiased selection:bg-emeraldMain selection:text-slate-950">
+
+  <!-- Top Navigation Bar -->
+  <header class="border-b border-slate-800/80 bg-bg/90 backdrop-blur sticky top-0 z-20">
+    <div class="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-emeraldMain shadow-[0_0_10px_#10b981]"></span>
+        <span class="font-mono text-sm sm:text-base font-bold tracking-tight text-slate-100">
+          ~/raw-url-converter
+        </span>
+      </div>
+      <a href="https://purandarsahu.in" class="font-mono text-xs text-cyanMain hover:text-emeraldBright transition px-3 py-1.5 rounded-lg bg-card border border-slate-800">
+        purandarsahu.in ↗
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-4 py-8 sm:py-10 space-y-6">
+
+    <!-- Title & Quick Guide -->
+    <div class="space-y-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emeraldMain/10 border border-emeraldMain/30 text-emeraldBright font-mono text-xs">
+        IMAGE ASSET UTILITY
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+        GitHub Raw Image URL Converter
+      </h1>
+      <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+        GitHub ka <code class="font-mono text-cyanMain bg-card px-1.5 py-0.5 rounded">/blob/</code> link paste karo aur turant <code class="font-mono text-emeraldBright bg-card px-1.5 py-0.5 rounded">admin.html</code> ke liye direct image link aur live preview check karo.
+      </p>
+    </div>
+
+    <!-- Step 1: Input Card -->
+    <section class="bg-card border border-slate-800 rounded-2xl p-5 sm:p-6 shadow-xl space-y-4">
+      <div class="flex items-center justify-between gap-2 flex-wrap">
+        <label for="githubUrlInput" class="font-mono text-xs uppercase tracking-wider text-emeraldBright font-semibold">
+          01. Paste GitHub File URL
+        </label>
+        <div class="flex items-center gap-2">
+          <button
+            id="pasteBtn"
+            type="button"
+            class="px-3.5 py-2 rounded-xl bg-emeraldMain/15 hover:bg-emeraldMain/25 border border-emeraldMain/40 text-emeraldBright font-mono text-xs font-semibold transition active:scale-95"
+          >
+            Paste Link
+          </button>
+          <button
+            id="clearBtn"
+            type="button"
+            class="px-3.5 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-300 font-mono text-xs font-medium transition active:scale-95"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+
+      <input
+        id="githubUrlInput"
+        type="url"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="https://github.com/purandar-sahu/purandarsahu/blob/main/page1.png"
+        class="w-full rounded-xl bg-bg border border-slate-700/90 focus:border-emeraldMain focus:ring-2 focus:ring-emeraldMain/20 outline-none px-4 py-3.5 font-mono text-xs sm:text-sm text-slate-100 placeholder:text-slate-600 transition"
+      />
+
+      <!-- Validation Status Banner -->
+      <div id="statusBox" class="hidden rounded-xl px-4 py-3 text-xs sm:text-sm font-medium border"></div>
+
+      <!-- Sample Link Helper -->
+      <div class="flex items-center justify-between gap-2 flex-wrap pt-1 text-xs text-slate-500">
+        <span>Example: <code class="font-mono text-slate-400">github.com/user/repo/blob/branch/file.png</code></span>
+        <button id="sampleBtn" type="button" class="text-cyanMain hover:underline font-mono">
+          Try Sample URL
+        </button>
+      </div>
+    </section>
+
+    <!-- Step 2: Converted URLs Output -->
+    <section id="outputSection" class="space-y-4">
+
+      <!-- Direct Raw GitHub URL -->
+      <div class="bg-card border border-slate-800 rounded-2xl p-5 sm:p-6 space-y-3">
+        <div class="flex items-center justify-between gap-2">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-wider text-emeraldBright font-semibold">
+              02. Direct Raw Image URL (Recommended)
+            </span>
+            <p class="text-xs text-slate-400 mt-0.5">Works for any public GitHub file or commit hash.</p>
+          </div>
+          <button
+            id="copyRawBtn"
+            type="button"
+            disabled
+            class="px-4 py-2.5 rounded-xl bg-emeraldMain text-slate-950 font-mono text-xs font-bold hover:bg-emeraldBright disabled:opacity-40 disabled:cursor-not-allowed transition active:scale-95 shrink-0"
+          >
+            Copy Raw URL
+          </button>
+        </div>
+
+        <input
+          id="rawUrlOutput"
+          type="text"
+          readonly
+          placeholder="Converted raw.githubusercontent.com link will appear here..."
+          class="w-full rounded-xl bg-bg border border-slate-800 px-4 py-3 font-mono text-xs sm:text-sm text-emeraldBright outline-none select-all"
+        />
+      </div>
+
+      <!-- Custom Domain URL Option -->
+      <div class="bg-card border border-slate-800 rounded-2xl p-5 sm:p-6 space-y-3">
+        <div class="flex items-center justify-between gap-2 flex-wrap">
+          <div>
+            <span class="font-mono text-xs uppercase tracking-wider text-cyanMain font-semibold">
+              03. Custom Domain URL Option
+            </span>
+            <p class="text-xs text-slate-400 mt-0.5">Use if the file is inside your deployed <code class="text-slate-300">purandarsahu.in</code> repo.</p>
+          </div>
+          <button
+            id="copyDomainBtn"
+            type="button"
+            disabled
+            class="px-4 py-2.5 rounded-xl bg-cyanMain/15 hover:bg-cyanMain/25 border border-cyanMain/40 text-cyanMain font-mono text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition active:scale-95 shrink-0"
+          >
+            Copy Domain URL
+          </button>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-2.5">
+          <input
+            id="domainBaseInput"
+            type="text"
+            value="https://purandarsahu.in"
+            aria-label="Custom Domain Base"
+            class="sm:w-56 rounded-xl bg-bg border border-slate-700/80 focus:border-cyanMain outline-none px-3.5 py-2.5 font-mono text-xs text-slate-300"
+          />
+          <input
+            id="domainUrlOutput"
+            type="text"
+            readonly
+            placeholder="https://purandarsahu.in/file.png"
+            class="flex-1 rounded-xl bg-bg border border-slate-800 px-4 py-2.5 font-mono text-xs sm:text-sm text-cyanMain outline-none select-all"
+          />
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Step 3: Live Image Verification Preview -->
+    <section class="bg-card border border-slate-800 rounded-2xl p-5 sm:p-6 space-y-4">
+      <div class="flex items-center justify-between gap-2 flex-wrap">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-wider text-slate-300 font-semibold">
+            04. Live Image Preview Check
+          </span>
+          <p class="text-xs text-slate-400 mt-0.5">Verifies that the image loads properly before you paste it into <code class="text-slate-300">admin.html</code>.</p>
+        </div>
+        <span id="previewBadge" class="font-mono text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400 border border-slate-700">
+          WAITING FOR URL
+        </span>
+      </div>
+
+      <div id="previewContainer" class="rounded-xl bg-bg border border-dashed border-slate-800 min-h-[220px] flex flex-col items-center justify-center p-4 text-center overflow-hidden">
+        <p id="previewPlaceholder" class="text-xs sm:text-sm text-slate-500 font-mono">
+          Paste a GitHub link above to test image loading...
+        </p>
+        <img
+          id="previewImage"
+          src=""
+          alt="Converted GitHub Image Preview"
+          class="hidden max-h-80 w-auto rounded-lg border border-slate-700/70 shadow-lg object-contain"
+        />
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="max-w-3xl mx-auto px-4 py-6 text-center text-xs text-slate-500 font-mono">
+    Built for Purandar Sahu · Paste converted URL into admin.html &rarr; Direct Image URL
+  </footer>
+
+  <script>
+    // DOM Elements
+    const githubUrlInput = document.getElementById('githubUrlInput');
+    const domainBaseInput = document.getElementById('domainBaseInput');
+    const rawUrlOutput = document.getElementById('rawUrlOutput');
+    const domainUrlOutput = document.getElementById('domainUrlOutput');
+    const statusBox = document.getElementById('statusBox');
+
+    const pasteBtn = document.getElementById('pasteBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const sampleBtn = document.getElementById('sampleBtn');
+    const copyRawBtn = document.getElementById('copyRawBtn');
+    const copyDomainBtn = document.getElementById('copyDomainBtn');
+
+    const previewBadge = document.getElementById('previewBadge');
+    const previewPlaceholder = document.getElementById('previewPlaceholder');
+    const previewImage = document.getElementById('previewImage');
+
+    // Helper: Show validation status message
+    function setStatus(type, message) {
+      if (!message) {
+        statusBox.className = 'hidden';
+        statusBox.textContent = '';
+        return;
+      }
+      const styles = {
+        success: 'bg-emeraldMain/10 border-emeraldMain/30 text-emeraldBright',
+        info: 'bg-cyanMain/10 border-cyanMain/30 text-cyanMain',
+        error: 'bg-rose-500/10 border-rose-500/30 text-rose-300',
+      };
+      statusBox.className = `rounded-xl px-4 py-3 text-xs sm:text-sm font-medium border ${styles[type] || styles.info}`;
+      statusBox.textContent = message;
+    }
+
+    // Helper: Reset outputs & preview
+    function resetOutputs() {
+      rawUrlOutput.value = '';
+      domainUrlOutput.value = '';
+      copyRawBtn.disabled = true;
+      copyDomainBtn.disabled = true;
+      previewImage.classList.add('hidden');
+      previewImage.removeAttribute('src');
+      previewPlaceholder.classList.remove('hidden');
+      previewPlaceholder.textContent = 'Paste a GitHub link above to test image loading...';
+      previewBadge.className = 'font-mono text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400 border border-slate-700';
+      previewBadge.textContent = 'WAITING FOR URL';
+    }
+
+    // Helper: Test loading image in preview box
+    function testImagePreview(url) {
+      previewBadge.className = 'font-mono text-xs px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30';
+      previewBadge.textContent = 'LOADING PREVIEW...';
+      previewPlaceholder.classList.remove('hidden');
+      previewPlaceholder.textContent = 'Checking image availability...';
+      previewImage.classList.add('hidden');
+
+      previewImage.onload = () => {
+        previewPlaceholder.classList.add('hidden');
+        previewImage.classList.remove('hidden');
+        previewBadge.className = 'font-mono text-xs px-3 py-1 rounded-full bg-emeraldMain/15 text-emeraldBright border border-emeraldMain/35';
+        previewBadge.textContent = 'VERIFIED · IMAGE LOADED';
+      };
+
+      previewImage.onerror = () => {
+        previewImage.classList.add('hidden');
+        previewPlaceholder.classList.remove('hidden');
+        previewPlaceholder.textContent = 'Could not load image. Check if the GitHub repository is Public and the file path is exact.';
+        previewBadge.className = 'font-mono text-xs px-3 py-1 rounded-full bg-rose-500/15 text-rose-300 border border-rose-500/35';
+        previewBadge.textContent = 'FAILED TO LOAD';
+      };
+
+      previewImage.src = url;
+    }
+
+    // Core Conversion Logic
+    function convertUrl() {
+      const rawInput = githubUrlInput.value.trim();
+      const customBase = (domainBaseInput.value.trim() || 'https://purandarsahu.in').replace(/\/+$/, '');
+
+      if (!rawInput) {
+        setStatus(null, '');
+        resetOutputs();
+        return;
+      }
+
+      // Case 1: Already a raw.githubusercontent.com URL
+      if (/^https?:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/([^/]+)\/(.+)$/i.test(rawInput)) {
+        const match = rawInput.match(/^https?:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/([^/]+)\/(.+)$/i);
+        const filePath = match[4].split('?')[0];
+        const cleanRaw = rawInput.split('?')[0];
+
+        rawUrlOutput.value = cleanRaw;
+        domainUrlOutput.value = `${customBase}/${filePath}`;
+        copyRawBtn.disabled = false;
+        copyDomainBtn.disabled = false;
+
+        setStatus('info', 'This is already a direct Raw GitHub URL! Ready to copy.');
+        testImagePreview(cleanRaw);
+        return;
+      }
+
+      // Case 2: Standard GitHub /blob/ or /raw/ URL
+      const blobMatch = rawInput.match(/^https?:\/\/(?:www\.)?github\.com\/([^/]+)\/([^/]+)\/(?:blob|raw)\/([^/]+)\/(.+)$/i);
+      if (blobMatch) {
+        const user = blobMatch[1];
+        const repo = blobMatch[2];
+        const branchOrCommit = blobMatch[3];
+        const filePath = blobMatch[4].split('?')[0];
+
+        const convertedRaw = `https://raw.githubusercontent.com/${user}/${repo}/${branchOrCommit}/${filePath}`;
+        const convertedDomain = `${customBase}/${filePath}`;
+
+        rawUrlOutput.value = convertedRaw;
+        domainUrlOutput.value = convertedDomain;
+        copyRawBtn.disabled = false;
+        copyDomainBtn.disabled = false;
+
+        setStatus('success', 'Converted! Copy the Direct Raw Image URL below and paste it into admin.html.');
+        testImagePreview(convertedRaw);
+        return;
+      }
+
+      // Case 3: Invalid or non-blob URL
+      resetOutputs();
+      if (rawInput.includes('drive.google.com')) {
+        setStatus('error', 'Google Drive links do not work directly as image URLs. Upload the image to GitHub and paste its /blob/ link here.');
+      } else if (rawInput.includes('github.com')) {
+        setStatus('error', 'Please open the specific image file on GitHub so the URL contains "/blob/" (e.g., github.com/user/repo/blob/main/image.png).');
+      } else {
+        setStatus('error', 'Invalid link. Paste a GitHub file URL containing "/blob/" (e.g., https://github.com/user/repo/blob/main/file.png).');
+      }
+    }
+
+    // Clipboard Copy Helper (with fallback for mobile/iframe environments)
+    function copyToClipboard(inputEl, buttonEl, defaultLabel) {
+      const text = inputEl.value;
+      if (!text) return;
+
+      const showCopied = () => {
+        buttonEl.textContent = 'Copied!';
+        setTimeout(() => {
+          buttonEl.textContent = defaultLabel;
+        }, 1800);
+      };
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(showCopied).catch(() => {
+          inputEl.select();
+          document.execCommand('copy');
+          showCopied();
+        });
+      } else {
+        inputEl.select();
+        inputEl.setSelectionRange(0, 99999);
+        document.execCommand('copy');
+        showCopied();
+      }
+    }
+
+    // Event Listeners
+    githubUrlInput.addEventListener('input', convertUrl);
+    domainBaseInput.addEventListener('input', convertUrl);
+
+    pasteBtn.addEventListener('click', async () => {
+      try {
+        const text = await navigator.clipboard.readText();
+        if (text) {
+          githubUrlInput.value = text.trim();
+          convertUrl();
+        }
+      } catch (err) {
+        githubUrlInput.focus();
+        setStatus('info', 'Tap inside the input box and select "Paste" from your keyboard.');
+      }
+    });
+
+    clearBtn.addEventListener('click', () => {
+      githubUrlInput.value = '';
+      setStatus(null, '');
+      resetOutputs();
+      githubUrlInput.focus();
+    });
+
+    sampleBtn.addEventListener('click', () => {
+      githubUrlInput.value = 'https://github.com/purandar-sahu/purandarsahu/blob/c311b1ef2120e70920bfcf8c8f790a23a7faa1db/page1.png';
+      convertUrl();
+    });
+
+    copyRawBtn.addEventListener('click', () => {
+      copyToClipboard(rawUrlOutput, copyRawBtn, 'Copy Raw URL');
+    });
+
+    copyDomainBtn.addEventListener('click', () => {
+      copyToClipboard(domainUrlOutput, copyDomainBtn, 'Copy Domain URL');
+    });
+  </script>
+</body>
+</html>
