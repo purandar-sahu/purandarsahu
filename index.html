@@ -1556,6 +1556,115 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
     }
+    @media (max-width: 680px) {
+  .series-intro {
+    align-items: start;
+    overflow-y: auto;
+    padding: 16px;
+  }
+
+  .intro-content {
+    min-height: calc(100dvh - 32px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .intro-topline,
+  .intro-bottomline {
+    width: 100%;
+    font-size: .56rem;
+    letter-spacing: .08em;
+  }
+
+  .intro-topline { gap: 8px; }
+
+  .intro-stage {
+    min-height: 0;
+    flex: 1;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "portrait" "copy";
+    align-content: center;
+    gap: 14px;
+    padding: 18px 0;
+  }
+
+  .intro-art {
+    grid-area: portrait;
+    position: relative;
+    inset: auto;
+    justify-self: center;
+    width: min(54vw, 210px);
+    height: clamp(142px, 42vw, 188px);
+    opacity: 1;
+    border-color: rgba(242, 201, 120, .55);
+  }
+
+  .intro-copy {
+    grid-area: copy;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .intro-title {
+    width: 100%;
+    margin: 10px 0 0;
+    font-size: clamp(3.3rem, 14vw, 4.7rem);
+    line-height: .82;
+    letter-spacing: -.035em;
+  }
+
+  .intro-title span { white-space: nowrap; }
+
+  .intro-subtitle {
+    max-width: 100%;
+    margin: 14px 0 10px;
+    font-size: .7rem;
+    line-height: 1.45;
+    letter-spacing: .11em;
+  }
+
+  .intro-description {
+    max-width: 100%;
+    margin: 0 auto 16px;
+    font-size: .9rem;
+    line-height: 1.5;
+  }
+
+  .intro-play {
+    width: min(100%, 300px);
+    padding: 13px 16px;
+    font-size: .88rem;
+  }
+
+  .intro-skip { margin-top: 12px; }
+
+  .intro-art-label {
+    left: 12px;
+    right: 12px;
+    bottom: 10px;
+    font-size: .53rem;
+    line-height: 1.4;
+    letter-spacing: .1em;
+  }
+
+  .intro-bottomline { gap: 8px; padding-top: 11px; }
+  .intro-progress { max-width: none; }
+}
+
+@media (max-width: 380px) {
+  .series-intro { padding: 12px; }
+  .intro-content { min-height: calc(100dvh - 24px); }
+  .intro-title { font-size: clamp(3rem, 13.5vw, 3.5rem); }
+  .intro-art { width: min(50vw, 180px); height: 138px; }
+  .intro-subtitle { font-size: .65rem; }
+  .intro-topline,
+  .intro-bottomline { font-size: .5rem; }
+    }
   </style>
 </head>
 <body>
