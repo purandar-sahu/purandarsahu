@@ -1,0 +1,250 @@
+{
+  "site": {
+    "pageTitle": "Purandar Sahu — The Journey",
+    "metaDescription": "The story of Purandar Sahu — student, web builder, cybersecurity learner, and founder of Pinku Digital Point in Paikmal, Odisha.",
+    "favicon": "favicon.svg",
+    "shareImage": "profile.jpg"
+  },
+  "profile": {
+    "fullName": "Purandar Sahu",
+    "nickname": "Pinku",
+    "businessName": "Pinku Digital Point",
+    "role": "Frontend Developer & Cyber Cafe Operator",
+    "summary": "Known locally as Pinku — I am a self-driven Frontend Developer, Cyber Cafe & Digital Services operator at Pinku Digital Point, Senior Secondary student, Cyber Security learner, and future entrepreneur building the foundation for a registered Private Limited company.",
+    "recruiterRole": "Frontend Developer · Student",
+    "recruiterSummary": "I am a student from Paikmal, Odisha, building responsive websites and digital tools while learning frontend development and cybersecurity.",
+    "clientRole": "Pinku Digital Point · Digital Services",
+    "clientSummary": "I run Pinku Digital Point in Paikmal, helping local students, job seekers, farmers and families with online forms, digital services and website work.",
+    "developerRole": "Frontend Web Builder · Cybersecurity Learner",
+    "developerSummary": "I build mobile-friendly websites and small digital tools, keep learning frontend development and cybersecurity, and share my work on GitHub.",
+    "introDescription": "A real journey of learning, building digital work, and growing Pinku Digital Point—one chapter at a time.",
+    "location": "Paikmal, Bargarh, Odisha, India",
+    "shortLocation": "Paikmal, Bargarh",
+    "dateOfBirth": "22 February 2009",
+    "education": "NIOS Senior Secondary (Class 12)",
+    "focus": "Web · CyberSec · Biz",
+    "email": "contact@purandarsahu.in",
+    "phone": "+91 82603 66310",
+    "whatsapp": "https://wa.me/918260366310",
+    "photo": "profile.jpg"
+  },
+  "projectHeading": "Things I have built",
+  "projectDescription": "A few real projects from my journey in web development and digital services.",
+  "educationHeading": "Education journey & resilience",
+  "educationDescription": "A transparent year-by-year record of my schooling—from primary classrooms to completing Senior Secondary through NIOS while working independently.",
+  "linksHeading": "Official profiles, projects & WhatsApp groups",
+  "linksDescription": "Connect with me across social platforms, explore my code repositories on GitHub, or join the WhatsApp communities I manage.",
+  "copy": {
+    "achievementsTitle": "Milestones & verified learning",
+    "achievementsDescription": "Certificates, courses, and achievements from my academic, technical, and digital service journey.",
+    "galleryTitle": "Moments, workspace & journey",
+    "galleryDescription": "Snapshots from my workspace at Pinku Digital Point, tech setup, and personal milestones.",
+    "contactTitle": "Let's work or connect together",
+    "contactDescription": "Have a website project, need digital service support from Pinku Digital Point, or want to discuss business ideas? Reach out directly.",
+    "contactIntro": "For the fastest response on online forms or urgent digital work, message on WhatsApp. For formal collaborations and web projects, drop an email.",
+    "contactFormIntro": "Fill out your details below to open a ready-to-send email.",
+    "businessCtaDescription": "Message on WhatsApp or join the Pinku Digital Point update group for daily job & scheme alerts.",
+    "businessDisclaimer": "Disclaimer: Pinku Digital Point is an independent cyber cafe and digital facilitation center, not a government department. Final approvals and timelines are governed strictly by the respective official authorities."
+  },
+  "about": {
+    "title": "Building skills, earning independently, and preparing for scale.",
+    "description": "A complete look at my background in Odisha, my daily work across technology and digital services, and the direction I am actively building toward.",
+    "story": "My name is Purandar Sahu, and in my local community I am widely known as Pinku. I belong to the Paikmal region of Bargarh district, Odisha. From an early stage, I chose to combine practical digital skills with real-world service work to build my future.\n\nToday, my daily routine revolves around five interconnected areas. First, I run Pinku Digital Point, my cyber cafe and digital service center, which serves as my primary source of income and ground-level business training. Helping students, job seekers, farmers, and families with online job portals, government certificates, scholarships, and documentation has taught me customer handling, accuracy under pressure, and financial responsibility.\n\nSecond, I work as a Frontend Developer—designing and deploying clean, responsive websites using HTML, CSS, JavaScript, GitHub Pages, and Cloudflare. Alongside web development, I am actively learning Cyber Security fundamentals—understanding how web applications, networks, authentication systems, and online data stay protected against common vulnerabilities.\n\nOn the academic front, after scoring 77.17% (463/600) in my Class 10 board exams, I faced a setback in +2 where I could not clear three subjects in the board exams. Rather than letting that pause my progress, I took fresh admission in NIOS Senior Secondary (Class 12) so I can complete my formal education while continuing to grow my technical skills and business operations toward my long-term goal of launching a registered Private Limited (Pvt. Ltd.) company."
+  },
+  "highlights": [
+    {
+      "code": "01 / DEV",
+      "title": "Frontend Developer",
+      "description": "Crafting fast, mobile-first static websites, custom domains, and clean UI layouts."
+    },
+    {
+      "code": "02 / WORK",
+      "title": "Cyber Cafe Operator",
+      "description": "Running Pinku Digital Point for e-governance, online applications, and print/PDF services."
+    },
+    {
+      "code": "03 / SEC",
+      "title": "Cyber Security Learner",
+      "description": "Exploring web security basics, digital hygiene, safe authentication, and ethical testing concepts."
+    },
+    {
+      "code": "04 / EDU",
+      "title": "NIOS Student",
+      "description": "Completing Senior Secondary studies with structured self-discipline alongside daily work."
+    },
+    {
+      "code": "05 / BIZ",
+      "title": "Future Entrepreneur",
+      "description": "Building real customer experience today to establish a Pvt. Ltd. company in the future."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Personal Portfolio",
+      "description": "This website: my story, work at Pinku Digital Point, education, milestones and ways to connect.",
+      "url": "#home",
+      "button": "Explore this site ↗"
+    },
+    {
+      "title": "GitHub Image URL Converter",
+      "description": "A small mobile-friendly tool that converts GitHub file links to direct image URLs and checks the preview.",
+      "url": "converter.html",
+      "button": "Open the tool ↗"
+    },
+    {
+      "title": "Link-in-Bio Website",
+      "description": "A compact hub for my online profiles, Pinku Digital Point and other useful links.",
+      "url": "https://purandar-sahu.github.io/Link-In-Bio-PurandarSahu/",
+      "button": "View project ↗"
+    }
+  ],
+  "business": {
+    "title": "Pinku Digital Point",
+    "description": "My independent digital service center in Paikmal, Odisha — turning everyday online and government portal processes into fast, transparent, and reliable support for local citizens and students.",
+    "story": "Pinku Digital Point is more than just a name—it is my self-built earning platform where I handle real cyber cafe and digital service operations every day. For many students, job seekers, farmers, and families in rural and semi-urban areas, navigating complex online portals, document upload specifications, payment gateways, and official forms can be stressful and prone to costly errors.\n\nAt Pinku Digital Point, every application is checked carefully before submission. Whether someone needs to apply for a competitive recruitment exam, update their PAN card, download an e-District certificate, register a small business under Udyam or FSSAI, or get urgent printouts and scanned PDFs prepared to exact KB dimensions, I aim to ensure clear communication, upfront service charges, and reliable follow-up.",
+    "cta": "Need any cyber cafe or online application service?"
+  },
+  "services": [
+    {
+      "title": "Govt. Jobs & Exam Forms",
+      "description": "SSC, Odisha state recruitment, defence & police forms, admit card downloads, answer keys, and result checking."
+    },
+    {
+      "title": "PAN & Identity Services",
+      "description": "New PAN card applications, name/DOB/photo corrections, e-PAN downloads, and authorized identity portal updates."
+    },
+    {
+      "title": "e-District & Certificates",
+      "description": "Online support for Resident, Income, Caste, Legal Heir, and other state portal certificate applications."
+    },
+    {
+      "title": "Scholarships & Admissions",
+      "description": "State & national scholarship portals, college admission forms, NIOS/board forms, and document verification uploads."
+    },
+    {
+      "title": "Business Registrations",
+      "description": "Udyam (MSME) registration, basic FSSAI food registration, and digital documentation support for local shops."
+    },
+    {
+      "title": "Travel & Utility Bookings",
+      "description": "Train & bus ticket bookings, bill payments, mobile/DTH recharges, and essential online utility transactions."
+    },
+    {
+      "title": "Print, Scan & PDF Studio",
+      "description": "High-speed B/W & colour printing, document scanning, lamination, passport photos, and custom PDF resizing/merging."
+    },
+    {
+      "title": "Web & Digital Setup",
+      "description": "Portfolio websites, Google Business profile setup, social media branding, and digital posters for local businesses."
+    }
+  ],
+  "educationTimeline": [
+    {
+      "year": "2026 – 2027 (Ongoing)",
+      "duration": "Senior Secondary · Class 12",
+      "school": "National Institute of Open Schooling (NIOS) — Stream 1, Block 1",
+      "description": "After facing an academic setback in my regular +2 board exams, I took a practical decision to restart cleanly by enrolling in NIOS Senior Secondary through fresh admission based on my Class 10 qualification. This flexible open-schooling structure allows me to study systematically, prepare subject by subject, and complete my Class 12 qualification while simultaneously running Pinku Digital Point and building my web development skills."
+    },
+    {
+      "year": "2024 – 2026 (2 Years)",
+      "duration": "Higher Secondary (+2 Arts)",
+      "school": "Vindhya Vasini Higher Secondary School, Paikmal",
+      "description": "Completed two years pursuing Higher Secondary (+2) education in the Arts/Humanities stream. Scored 265 out of 600 and did not pass three subjects. I treated this as a turning point, took responsibility for my study routine, and enrolled in NIOS to complete Class 12 with a more structured plan while continuing to build my skills and work."
+    },
+    {
+      "year": "2022 – 2024 (2 Years)",
+      "duration": "Secondary · Classes 9 & 10",
+      "school": "Panchayat High School, Kechhodadar",
+      "description": "Completed two years of secondary schooling (Classes 9 and 10) and appeared for the BSE Odisha Class 10 Board Examination in 2024. Passed with 463 out of 600 marks (77.17%), building a strong academic base and sharpening my interest in computers, internet tools, and digital systems."
+    },
+    {
+      "year": "2014 – 2022 (8 Years)",
+      "duration": "Primary & Upper Primary · Classes 1 to 8",
+      "school": "Government U.P. School, Frezor Pur",
+      "description": "Completed eight foundational years of schooling from Class 1 through Class 8."
+    }
+  ],
+  "vision": {
+    "title": "Building toward a Private Limited (Pvt. Ltd.) Company",
+    "description": "Turning grassroots digital service experience and technical skills into an organized, scalable enterprise.",
+    "heading": "From a Local Digital Center to an Organized Corporate Venture",
+    "story": "My long-term vision is to build and register my own Private Limited (Pvt. Ltd.) Company. Working at the ground level through Pinku Digital Point has shown me firsthand how much demand exists in semi-urban and rural India for trustworthy digital infrastructure, web development, e-governance facilitation, and organized local services.\n\nInstead of staying limited to solo freelance work or a single counter, I am systematically learning business operations, customer acquisition, web technologies, and digital security today so that once I complete my Senior Secondary education and cross key legal and financial milestones, I can scale into a structured company that delivers high-value digital and local services while creating employment opportunities for other young people in my region.",
+    "roadmap": [
+      {
+        "phase": "PHASE 01 · FOUNDATION",
+        "title": "Strengthen Core Operations",
+        "description": "Grow Pinku Digital Point's daily service volume, complete NIOS Class 12, and build a strong portfolio of real-world web projects on GitHub."
+      },
+      {
+        "phase": "PHASE 02 · EXPANSION",
+        "title": "Multi-Service Digital Hub",
+        "description": "Expand into full-scale web solutions, local business digitization, logistics/commerce support, and structured team workflows."
+      },
+      {
+        "phase": "PHASE 03 · INCORPORATION",
+        "title": "Pvt. Ltd. Company Launch",
+        "description": "Formally incorporate a Private Limited entity with compliant accounting, scalable operations, and long-term regional impact."
+      }
+    ]
+  },
+  "links": [
+    {
+      "icon": "WA1",
+      "title": "Pinku Digital Point (WhatsApp Group)",
+      "description": "Official group for online forms, job alerts & digital service updates",
+      "url": "https://chat.whatsapp.com/DfueUL9MFYD03gQVLiMBX2?s=cl&p=a&iam=2",
+      "action": "JOIN ↗",
+      "community": true
+    },
+    {
+      "icon": "WA2",
+      "title": "Odisha Daily Updates (WhatsApp Group)",
+      "description": "Managed community for daily Odisha news, schemes & student alerts",
+      "url": "https://chat.whatsapp.com/FgBXSkgW50lGYyrwneE5I9?s=cl&p=a&iam=2",
+      "action": "JOIN ↗",
+      "community": true
+    },
+    {
+      "icon": "GH",
+      "title": "GitHub · @purandar-sahu",
+      "description": "Source code, web development projects & live repositories",
+      "url": "https://github.com/purandar-sahu/",
+      "action": "CODE ↗"
+    },
+    {
+      "icon": "IN",
+      "title": "LinkedIn · Purandar Sahu",
+      "description": "Professional network, education & business updates",
+      "url": "https://www.linkedin.com/in/purandar-sahu-7aa69b417",
+      "action": "OPEN ↗"
+    },
+    {
+      "icon": "IG",
+      "title": "Instagram · @purandarsahu.in",
+      "description": "Personal updates, reels & behind-the-scenes journey",
+      "url": "https://instagram.com/purandarsahu.in",
+      "action": "FOLLOW ↗"
+    },
+    {
+      "icon": "TG",
+      "title": "Telegram · t.me/purandarsahu_in",
+      "description": "Direct Telegram channel & quick messaging",
+      "url": "https://t.me/purandarsahu_in",
+      "action": "OPEN ↗"
+    },
+    {
+      "icon": "FB",
+      "title": "Facebook · @ipinkusahu",
+      "description": "Facebook profile & community posts",
+      "url": "https://facebook.com/ipinkusahu",
+      "action": "OPEN ↗"
+    },
+    {
+      "icon": "@",
+      "title": "Official Email · contact@purandarsahu.in",
+      "description": "For business inquiries, websites & formal communication",
+      "url": "mailto:contact@purandarsahu.in",
+      "action": "MAIL ↗"
+    }
+  ]
+}

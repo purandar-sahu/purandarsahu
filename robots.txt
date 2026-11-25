@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /admin-studio.html
+Disallow: /admin-media.html
+Sitemap: https://purandarsahu.in/sitemap.xml
